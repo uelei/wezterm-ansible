@@ -1,0 +1,10 @@
+# Standards: 1.2
+---
+# @var wezterm_version:description: Version for the package
+# renovate: datasource=github-releases depName=wez/wezterm
+wezterm_version: 20230408-112425-69ae8472
+
+# @var wezterm_package:description: Download URL for the package to install
+wezterm_package: "https://github.com/wez/wezterm/releases/download/{{ wezterm_version }}/wezterm-{{ wezterm_version }}.Ubuntu{{ ansible_distribution_version }}.deb"
+
+...
