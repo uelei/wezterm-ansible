@@ -25,17 +25,28 @@
 # None
 # @end
 galaxy_info:
-  role_name: wezterm
-  namespace: rolehippie
-  author: Thomas Boerger
+  namespace: uelei
+  author: Wesley Werneck
   description: Ansible role to install wezterm terminal emulator
   license: Apache-2.0
   min_ansible_version: "2.10"
   platforms:
+    - name: Debian
+      versions:
+        - all
     - name: Ubuntu
       versions:
-        - focal
-        - jammy
+        - all
+    - name: ArchLinux
+      versions:
+        - all
+    - name: ArchLinux
+      versions:
+        - all
+    - name: MacOSX
+      versions:
+        - all
+        - any
   galaxy_tags:
     - terminal
 

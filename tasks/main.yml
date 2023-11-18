@@ -1,10 +1,24 @@
 # Standards: 1.2
 ---
-- name: Install application deb
+- name: Install wezterm deb
+  when: ansible_pkg_mgr == "apt"
   apt:
     deb: "{{ wezterm_package }}"
     state: present
   tags:
     - wezterm
+- name: Install wezterm arch
+  when: ansible_pkg_mgr == "pacman"
+  community.general.pacman:
+    name:
+      - wezterm
+    state: latest
+  become: true
 
+- name: Install from brew cask
+  when: ansible_os_family == "Darwin"
+  become_user: '{{ user }}'
+  community.general.homebrew_cask:
+    name: wezterm
+    state: present
 ...
